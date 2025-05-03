@@ -62,8 +62,9 @@ function Learning() {
       <section 
       className="relative z-4 min-h-20 bg-cover bg-center bg-no-repeat"
       style={{
-        backgroundImage:
-          "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzaoFYJnIh6KZxybR3hP90XEIxEBNc9MRgtA&s')", // You can change this URL
+        backgroundImage:"url('/precaution.jpg')",
+        // backgroundImage:
+        //   "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzaoFYJnIh6KZxybR3hP90XEIxEBNc9MRgtA&s')", // You can change this URL
       }}
        >
         <h1 className="text-5xl font-bold text-red-900 italic mb-4">Watch & Learn</h1>

@@ -1,9 +1,18 @@
 import React, { useEffect } from "react";
 import { useStateContext } from "../context/index.jsx";
 
-import { useUser } from "@clerk/clerk-react";
+import { useUser,useClerk } from "@clerk/clerk-react";
 
 const Profile = () => {
+   const { isSignedIn, isLoaded } = useUser();
+       const clerk = useClerk();
+      
+        useEffect(() => {
+          if (isLoaded && !isSignedIn) {
+            clerk.redirectToSignIn();
+            // redirectToSignIn(); // Automatically redirects unauthenticated users
+          }
+        }, [isLoaded, isSignedIn]);
   const { currentUser, fetchUserByEmail } = useStateContext();
   const { user } = useUser();
 
@@ -24,7 +33,7 @@ const Profile = () => {
   if (!currentUser) {
     return (
       <div className="flex h-screen items-center justify-center">
-        <div className="text-lg text-gray-400">Waiting for sign-in/sign-up properly</div>
+        <div className="text-lg text-gray-400">Processing...</div>
       </div>
     );
   }

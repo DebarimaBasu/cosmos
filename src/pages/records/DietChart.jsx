@@ -51,8 +51,9 @@ const DietChart = () => {
     <div
       className="min-h-screen bg-cover bg-center bg-no-repeat py-10 px-4"
       style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1950&q=80')", // You can change this URL
+        backgroundImage:"url('/diet.jpg')",
+        // backgroundImage:
+        //   "url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1950&q=80')", // You can change this URL
       }}
     >
       <div className="max-w-4xl mx-auto p-6 bg-transparent bg-opacity-90 backdrop-blur-md shadow-lg rounded-2xl">
