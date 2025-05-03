@@ -43,8 +43,14 @@ export const ChatBot = () => {
   return (
     <div className="flex flex-col justify-center  h-screen bg-[#13131a] p-4"
      style={{
-            backgroundImage:"url('/rob1.jpg')",
-              // "url('https://img.freepik.com/premium-photo/digital-illustration-friendly-chatbot-avatar-with-speech-bubble-smartphone-screen-symbolizing-ai-customer-support_1019851-3964.jpg?w=1380')", // You can change this URL
+            // backgroundImage:"url('/rob1.jpg')",
+            // backgroundImage:  "url('https://img.freepik.com/premium-photo/digital-illustration-friendly-chatbot-avatar-with-speech-bubble-smartphone-screen-symbolizing-ai-customer-support_1019851-3964.jpg?w=1380')" // You can change this URL
+            
+            backgroundImage: "url('https://blog.usetada.com/hs-fs/hubfs/AI%20Chatbots%20in%20loyalty%20programs.jpg?width=1185&height=617&name=AI%20Chatbots%20in%20loyalty%20programs.jpg')",
+            backgroundSize: 'cover',
+            height: '600px',
+            width: '100%',
+
           }}
     >
      
