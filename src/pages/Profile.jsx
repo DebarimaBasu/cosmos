@@ -24,7 +24,7 @@ const Profile = () => {
   if (!currentUser) {
     return (
       <div className="flex h-screen items-center justify-center">
-        <div className="text-lg text-gray-500">Loading...</div>
+        <div className="text-lg text-gray-400">Waiting for sign-in/sign-up properly</div>
       </div>
     );
   }

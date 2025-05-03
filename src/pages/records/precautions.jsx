@@ -97,7 +97,7 @@ function Learning() {
           </div>
         ))}
       </section>
-      <div className="mt-20 px-4 max-w-6xl mx-auto text-black">
+      <div className="mt-20 px-4 max-w-6xl mx-auto text-gray-500">
   <h2 className="text-4xl font-bold italic text-center mb-10">
     <u>What Survivors Say</u>
   </h2>

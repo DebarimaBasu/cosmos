@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import { useStateContext } from "./../../context/index.jsx"; // Adjust the import path
 export default function Predict() {
+  // const { isSignedIn,  redirectToSignIn  } = useStateContext();
   const [inputText, setInputText] = useState("");
   const [prediction, setPrediction] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
  const navigate = useNavigate();
+//  if (!isSignedIn) {
+//   console.log("Not signed in. Redirecting to Sign In.");
+//   redirectToSignIn();
+// }
   const handleSubmit = async (e) => {
     e.preventDefault();
     setPrediction(null);

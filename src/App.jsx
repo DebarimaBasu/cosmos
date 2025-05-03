@@ -3,7 +3,7 @@ import { Sidebar, Navbar } from "./components";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { useState } from 'react';
 import { useStateContext } from "./context/index.jsx";
-import { useAuth, useClerk, useUser } from "@clerk/clerk-react";
+// import { useAuth, useClerk, useUser } from "@clerk/clerk-react";
 import ScreeningSchedule from "./pages/records/ScreeningSchedule";
 
 import Predict from './pages/records/predict.jsx';

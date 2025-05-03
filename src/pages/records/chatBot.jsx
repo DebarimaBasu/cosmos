@@ -6,10 +6,21 @@ import {
   Message,
   MessageInput,
 } from "@chatscope/chat-ui-kit-react";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
+import { useUser,useClerk } from "@clerk/clerk-react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export const ChatBot = () => {
+    const { isSignedIn, isLoaded } = useUser();
+     const clerk = useClerk();
+    
+      useEffect(() => {
+        if (isLoaded && !isSignedIn) {
+          clerk.redirectToSignIn();
+          // redirectToSignIn(); // Automatically redirects unauthenticated users
+        }
+      }, [isLoaded, isSignedIn]);
+
   const [userInput, setUserInput] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
 
@@ -41,7 +52,9 @@ export const ChatBot = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen bg-[#13131a] p-4"
+    <div className="flex flex-col justify-center h-screen w-full bg-[#13131a] p-4"
+
+    /* <div className="flex flex-col justify-center  h-screen bg-[#13131a] p-4" */
      style={{
             // backgroundImage:"url('/rob1.jpg')",
             // backgroundImage:  "url('https://img.freepik.com/premium-photo/digital-illustration-friendly-chatbot-avatar-with-speech-bubble-smartphone-screen-symbolizing-ai-customer-support_1019851-3964.jpg?w=1380')" // You can change this URL
@@ -56,35 +69,34 @@ export const ChatBot = () => {
      
       <div className="text-white text-2xl font-bold mb-4 ">Chat with rob</div>
      
-    <div style={{ position: "relative", height: "600px",width: "50%" }}>
-    <div className="absolute top-4 left-4 bg-white bg-opacity-70 text-white text-sm px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition duration-300">
-    Hello! I'm your assistant 👋
-  </div>
-      <MainContainer>
-        <ChatContainer>
-          <MessageList>
-            {chatHistory.map((elt, i) => (
-              <Message
-                key={i}
-                model={{
-                  message: elt.message,
-                  sender: elt.type,
-                  sentTime: "just now",
-
-                  direction: elt.type === "user" ? "outgoing" : "incoming",
-                }}
-              />
-            ))}
-          </MessageList>
-          <MessageInput
-            placeholder="Type message here"
-            value={userInput}
-            onChange={(value) => handleUserInput(value)}
-            onSend={sendMessage}
+      <div
+  className="flex-1 w-full sm:w-1/2 h-screen sm:h-[600px]"
+  style={{ position: "relative" }}
+>
+  <MainContainer>
+    <ChatContainer>
+      <MessageList>
+        {chatHistory.map((elt, i) => (
+          <Message
+            key={i}
+            model={{
+              message: elt.message,
+              sender: elt.type,
+              sentTime: "just now",
+              direction: elt.type === "user" ? "outgoing" : "incoming",
+            }}
           />
-        </ChatContainer>
-      </MainContainer>
-    </div>
+        ))}
+      </MessageList>
+      <MessageInput
+        placeholder="Type message here"
+        value={userInput}
+        onChange={(value) => handleUserInput(value)}
+        onSend={sendMessage}
+      />
+    </ChatContainer>
+  </MainContainer>
+</div>
     </div>
   );
-};
+}

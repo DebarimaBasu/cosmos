@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useUser,useClerk } from "@clerk/clerk-react";
 
 const UploadDoctor = () => {
   const [preview, setPreview] = useState(null);
@@ -7,6 +8,16 @@ const UploadDoctor = () => {
   const [contactNumber, setContact] = useState("");
   const [specialty, setSpecialty] = useState("");
   const [doctors, setDoctors] = useState([]);
+   
+    const { isSignedIn, isLoaded } = useUser();
+   const clerk = useClerk();
+  
+    useEffect(() => {
+      if (isLoaded && !isSignedIn) {
+        clerk.redirectToSignIn();
+        // redirectToSignIn(); // Automatically redirects unauthenticated users
+      }
+    }, [isLoaded, isSignedIn]);
 
   useEffect(() => {
     const savedDoctors = JSON.parse(localStorage.getItem("doctors")) || [];
