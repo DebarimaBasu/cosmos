@@ -52,7 +52,7 @@ export const ChatBot = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center h-screen w-full bg-[#13131a] p-4"
+    <div className="flex flex-col  h-screen w-full bg-[#13131a] p-4"
 
     /* <div className="flex flex-col justify-center  h-screen bg-[#13131a] p-4" */
      style={{
