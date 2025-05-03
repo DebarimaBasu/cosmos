@@ -13,6 +13,9 @@ import { useEffect } from "react";
 import { Home, Onboarding,Profile } from "./pages";
 import Learning from './pages/records/precautions.jsx';
 // import MedicalRecords from "./pages/records/index";
+         
+
+
  import Process from './pages/records/Process.jsx';
 import { Buffer } from "buffer";
 import BreastCancerSymptoms from './pages/records/BreastCancerSymptoms.jsx';
@@ -20,10 +23,10 @@ import DietChart from './pages/records/DietChart.jsx';
 import UploadDoctor from './pages/records/uploadDoctor.jsx';
 import TreatmentProcess from './pages/records/TreatmentProcess.jsx';
 const App = () => {
-  const { user, isSignedIn, isLoaded, redirectToSignIn, currentUser } = useStateContext();
+  const { user,  isSignedIn,isLoaded,   redirectToSignIn , currentUser } = useStateContext();
   // const {  currentUser,fetchUserByEmail  } = useStateContext();
   // const { isSignedIn,isLoaded, } = useUser();
-  // const { redirectToSignIn } = useClerk();
+  //  const { redirectToSignIn } = useClerk();
   const navigate = useNavigate();
   useEffect(() => {
     if (!window.Buffer) {

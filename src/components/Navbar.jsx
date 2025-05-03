@@ -49,7 +49,7 @@ const Navbar = () => {
 
   return (
     <div className="mb-[35px] flex flex-col-reverse justify-between gap-6 md:flex-row">
-      <div className="flex h-[52px] max-w-[458px] flex-row rounded-[100px] bg-[#1c1c24] py-2 pl-4 pr-2 lg:flex-1">
+      <div className=" flex h-[52px] max-w-[458px] flex-row rounded-[100px] bg-[#1c1c24] py-2 pl-4 pr-2 lg:flex-1">
         <input
           type="text"
           placeholder="Search for records"
@@ -59,8 +59,9 @@ const Navbar = () => {
           <img src={search} alt="search" className="h-[15px] w-[15px] object-contain" />
         </div>
       </div>
+      <div className="flex justify-end sm:justify-end gap-2">
 
-      <div className="hidden flex-row justify-end gap-2 sm:flex">
+      {/* <div className=" flex-row justify-end gap-2 sm:flex"> */}
         <CustomButton
           btnType="button"
           title={isSignedIn ? "Log Out" : "Log In"}
@@ -71,9 +72,10 @@ const Navbar = () => {
       </div>
 
       <div className="relative flex items-center justify-between sm:hidden">
-        <div className="flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-[10px] bg-[#2c2f32]">
+        <div className=" flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-[10px] bg-[#2c2f32]">
           <IconHeartHandshake size={40} color="#1ec070" className="p-2" />
         </div>
+       
         <img
           src={menu}
           alt="menu"
